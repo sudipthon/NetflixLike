@@ -15,15 +15,22 @@ class Video(models.Model):
         return self.title
 
 
+class VideoAllProxy(Video):
+    class Meta:
+        proxy = True
+        verbose_name = 'All Video'
+        verbose_name_plural = 'All Videos'
+
+
 
 
 # proxy_meaning=a figure that can be used to represent the value of something in a calculation
     
     #passing video as arg and creating meta class with proxy = True will create proxy model which simply creating another database table with same fields as Video model without creating another table fields
-class VideoProxy(Video):
+class VideoPublishedProxy(Video):
     class Meta:
         proxy = True
-        verbose_name = 'Proxy Video'
-        verbose_name_plural = 'Proxy Videos'
+        verbose_name = 'Published Video'
+        verbose_name_plural = 'Published Videos'
 
    
